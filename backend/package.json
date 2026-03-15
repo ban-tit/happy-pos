@@ -1,0 +1,10 @@
+{
+  "name": "happy-pos-backend",
+  "start": "ts-node-dev server.ts",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
