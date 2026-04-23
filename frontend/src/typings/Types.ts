@@ -1,4 +1,5 @@
 interface BaseType {
+  id?: string;
   name: string;
 }
 
@@ -16,4 +17,10 @@ export interface Addon extends BaseType {
 
 export interface AddonCategory extends BaseType {
   is_Required: boolean;
+}
+
+export interface MenuLocation extends BaseType {
+  menus_id: number;
+  locations_id: number;
+  is_available: boolean;
 }
