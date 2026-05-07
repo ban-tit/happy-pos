@@ -5,6 +5,8 @@ import Addons from '../components/Addons';
 import MenuCategories from '../components/MenuCategories';
 import AddonCategories from '../components/AddonCategories';
 import Settings from '../components/Settings';
+import Login from '../components/Login';
+import Register from '../components/Register';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ export const router = createBrowserRouter([
   {
     path: '/addon-categories',
     element: <AddonCategories />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
   {
     path: '/settings',

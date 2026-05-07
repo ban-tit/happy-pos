@@ -16,7 +16,7 @@ import {
   ListItemText,
   Divider,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import CategoryIcon from '@mui/icons-material/Category';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
@@ -42,6 +42,7 @@ const sideBarMenuItems = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -128,7 +129,7 @@ const Navbar = () => {
             </Typography>
           </Box>
 
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
         </Toolbar>
       </AppBar>
 

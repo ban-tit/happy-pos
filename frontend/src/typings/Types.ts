@@ -24,3 +24,7 @@ export interface MenuLocation extends BaseType {
   locations_id: number;
   is_available: boolean;
 }
+
+export interface Location extends BaseType {
+  address?: string;
+}

@@ -5,6 +5,7 @@ import {
   Menu,
   MenuCategory,
   MenuLocation,
+  Location,
 } from '../typings/Types';
 import { useState, useEffect } from 'react';
 import { config } from '../config/config';
@@ -15,6 +16,7 @@ interface AppContextType {
   addons: Addon[];
   addonCategories: AddonCategory[];
   menuLocations: MenuLocation[];
+  locations: Location[];
   updateData: (value: any) => void;
   fetchData: () => void;
 }
@@ -25,6 +27,7 @@ const defaultContext: AppContextType = {
   addons: [],
   addonCategories: [],
   menuLocations: [],
+  locations: [],
   updateData: () => {},
   fetchData: () => {},
 };
@@ -41,8 +44,14 @@ const AppProvider = (props: any) => {
   const fetchData = async () => {
     const response = await fetch(`${config.apiBaseUrl}/data`);
     const responseJson = await response.json();
-    const { menus, menuCategories, addons, addonCategories, menuLocations } =
-      responseJson;
+    const {
+      menus,
+      menuCategories,
+      addons,
+      addonCategories,
+      menuLocations,
+      locations,
+    } = responseJson;
     updateData({
       ...data,
       menus,
@@ -50,6 +59,7 @@ const AppProvider = (props: any) => {
       addons,
       addonCategories,
       menuLocations,
+      locations,
     });
   };
 
